@@ -1,9 +1,9 @@
-Excel����תƴ����������, ���ո�
-��Excel->����->��->Viaual Basic�༭��
-�ڵ������Ĵ����ж���VBAproject���Ҽ�->����->ģ��
-��������һ����Ϊ"ģ��1"�����
-���ұߵĿհ�����ճ���������ݣ�
-**********�ӱ��п�ʼ����, ���в�����**********
+Excel中文转拼音（完整版, 带空格）
+打开Excel->工具->宏->Viaual Basic编辑器
+在弹出来的窗口中对着VBAproject点右键->插入->模块
+下面会出现一个名为"模块1"，点击
+在右边的空白栏中粘贴以下内容：
+**********从本行开始复制, 本行不复制**********
 Function pinyin(p As String) As String
 i = Asc(p)
 Select Case i
@@ -402,8 +402,8 @@ For i = 1 To Len(str)
 getpy = getpy & pinyin(Mid(str, i, 1))
 Next i
 End Function
-**********���Ƶ��˽���,���в�����**********
-����ת�������ѱ�д���!�ص��˱༩�Ĵ��ڡ�
-Ҫ��Excel��ʹ�ã��������£�
+**********复制到此结束,本行不复制**********
+现在转换函数已编写完成!关掉此编缉的窗口。
+要在Excel中使用，方法如下：
 A1         A2
-�й�     =getpy(A1)
+中国     =getpy(A1)
