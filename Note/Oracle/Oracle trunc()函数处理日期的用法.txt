@@ -1,9 +1,9 @@
-Oracle trunc()º¯ÊıµÄÓÃ·¨ 
-1.select trunc(sysdate) from dual  --2011-3-18  ½ñÌìµÄÈÕÆÚÎª2011-3-18 
-2.select trunc(sysdate, 'mm')   from   dual  --2011-3-1    ·µ»Øµ±ÔÂµÚÒ»Ìì. 
-3.select trunc(sysdate,'yy') from dual  --2011-1-1       ·µ»Øµ±ÄêµÚÒ»Ìì 
-4.select trunc(sysdate,'dd') from dual  --2011-3-18    ·µ»Øµ±Ç°ÄêÔÂÈÕ 
-5.select trunc(sysdate,'yyyy') from dual  --2011-1-1   ·µ»Øµ±ÄêµÚÒ»Ìì 
-6.select trunc(sysdate,'d') from dual  --2011-3-13 (ĞÇÆÚÌì)·µ»Øµ±Ç°ĞÇÆÚµÄµÚÒ»Ìì 
-7.select trunc(sysdate, 'hh') from dual   --2011-3-18 14:00:00   µ±Ç°Ê±¼äÎª14:41    
-8.select trunc(sysdate, 'mi') from dual  --2011-3-18 14:41:00   TRUNC()º¯ÊıÃ»ÓĞÃëµÄ¾«È·
+Oracle trunc()å‡½æ•°çš„ç”¨æ³• 
+1.select trunc(sysdate) from dual  --2011-3-18  ä»Šå¤©çš„æ—¥æœŸä¸º2011-3-18 
+2.select trunc(sysdate, 'mm')   from   dual  --2011-3-1    è¿”å›å½“æœˆç¬¬ä¸€å¤©. 
+3.select trunc(sysdate,'yy') from dual  --2011-1-1       è¿”å›å½“å¹´ç¬¬ä¸€å¤© 
+4.select trunc(sysdate,'dd') from dual  --2011-3-18    è¿”å›å½“å‰å¹´æœˆæ—¥ 
+5.select trunc(sysdate,'yyyy') from dual  --2011-1-1   è¿”å›å½“å¹´ç¬¬ä¸€å¤© 
+6.select trunc(sysdate,'d') from dual  --2011-3-13 (æ˜ŸæœŸå¤©)è¿”å›å½“å‰æ˜ŸæœŸçš„ç¬¬ä¸€å¤© 
+7.select trunc(sysdate, 'hh') from dual   --2011-3-18 14:00:00   å½“å‰æ—¶é—´ä¸º14:41    
+8.select trunc(sysdate, 'mi') from dual  --2011-3-18 14:41:00   TRUNC()å‡½æ•°æ²¡æœ‰ç§’çš„ç²¾ç¡®

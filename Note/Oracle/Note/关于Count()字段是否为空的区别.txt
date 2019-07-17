@@ -1,0 +1,19 @@
+SQL> select * from t2;
+
+       ID1        ID2
+---------- ----------
+         5
+
+         4         11
+         1         14
+         2         12
+         3         13
+
+已选择6行。
+
+SQL> select count(*) a,count(1) b,count(id1) c,count(id2) d from t2;
+
+         A          B          C          D
+---------- ---------- ---------- ----------
+         6          6          5          4
+这样就很清楚了
