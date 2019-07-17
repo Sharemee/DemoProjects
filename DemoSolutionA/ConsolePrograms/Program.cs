@@ -11,7 +11,7 @@ namespace ConsolePrograms
         static void Main(string[] args)
         {
             Console.WriteLine("当前系统时间: " + DateTime.Now.ToString() + "\n");
-            Demo1();
+            Demo2();
 
             Console.ReadKey();
         }
@@ -27,5 +27,12 @@ namespace ConsolePrograms
             Console.WriteLine("num1=" + num1 + "\n" + "num2=" + num2);
         }
 
+        static void Demo2()
+        {
+            DateTime dt = DateTime.Today;
+            Console.WriteLine("当前时间: "+dt.ToString());
+            Console.WriteLine("--: "+(1-dt.Day));
+            Console.WriteLine("本月月初: "+dt.AddDays(1-dt.Day));
+        }
     }
 }
