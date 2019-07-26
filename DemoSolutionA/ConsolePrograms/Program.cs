@@ -12,7 +12,7 @@ namespace ConsolePrograms
         static void Main(string[] args)
         {
             Console.WriteLine("当前系统时间: " + DateTime.Now.ToString() + "\n");
-            Demo3();
+            Demo4();
 
             Console.ReadKey();
         }
@@ -42,12 +42,21 @@ namespace ConsolePrograms
             Console.WriteLine("本月月初: "+dt.AddDays(1-dt.Day));
         }
 
+        /// <summary>
+        /// DateTime变量存储的时间是否是引用值
+        /// </summary>
         static void Demo3()
         {
             DateTime dt = DateTime.Now;
             Console.WriteLine("记录的时间: "+dt);
             Thread.Sleep(3000);
             Console.WriteLine("3秒钟之后取变量记录的时间: "+dt);
+        }
+
+        static void Demo4()
+        {
+            string str = DateTime.Now.ToString("yyy_MM_dd");
+            Console.WriteLine(str);
         }
     }
 }
