@@ -1,0 +1,1 @@
+Log4net默认关联的是应用程序的配置文件App.config(BS程序是Web.config), 可以使用程序集自定义属性来进行设置.
