@@ -1,5 +1,7 @@
 ﻿using log4net;
 using log4net.Config;
+using Quartz;
+using Quartz.Impl;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,6 +26,9 @@ namespace QuartzDemo01
             //获取一个日志记录器
             ILog _log = LogManager.GetLogger(typeof(Program));
             _log.Info("test");
+
+            ISchedulerFactory schedulerFactory = new StdSchedulerFactory();
+
             Console.ReadKey();
         }
 
