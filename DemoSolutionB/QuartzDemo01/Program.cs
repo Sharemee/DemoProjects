@@ -2,6 +2,7 @@
 using log4net.Config;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,11 @@ namespace QuartzDemo01
         {
             Console.WriteLine(Args(args));
 
-            XmlConfigurator.Configure();
+            //默认使用App.config里的配置
+            //XmlConfigurator.Configure();
+
+            //使用自定义配置文件里的配置
+            //XmlConfigurator.ConfigureAndWatch(new FileInfo("log4net.config"));
 
             //获取一个日志记录器
             ILog _log = LogManager.GetLogger(typeof(Program));
