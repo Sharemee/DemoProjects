@@ -13,7 +13,15 @@ namespace QuartzDemo01
 {
     class Program
     {
-        static async void Main()
+        private readonly ILog log = LogManager.GetLogger(typeof(Program));
+
+        static void Main()
+        {
+            Demo1();
+            Console.ReadKey();
+        }
+
+        static async void Demo1()
         {
             //默认使用App.config里的配置
             //XmlConfigurator.Configure();
@@ -44,8 +52,6 @@ namespace QuartzDemo01
 
             await sched.Shutdown();
             log.Info("Schedule was shutdown!");
-
-            Console.ReadKey();
         }
     }
 }
