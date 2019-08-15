@@ -13,10 +13,8 @@ namespace QuartzDemo01
 {
     class Program
     {
-        static void Main(string[] args)
+        static async void Main()
         {
-            Console.WriteLine(Args(args));
-
             //默认使用App.config里的配置
             //XmlConfigurator.Configure();
 
@@ -24,27 +22,30 @@ namespace QuartzDemo01
             //XmlConfigurator.ConfigureAndWatch(new FileInfo("log4net.config"));
 
             //获取一个日志记录器
-            ILog _log = LogManager.GetLogger(typeof(Program));
-            _log.Info("test");
+            ILog log = LogManager.GetLogger(typeof(Program));
+            log.Info("log4net configure complete!");
 
-            ISchedulerFactory schedulerFactory = new StdSchedulerFactory();
+            ISchedulerFactory sf = new StdSchedulerFactory();
+            IScheduler sched = await sf.GetScheduler();
+            log.Info("Create Scheduler!");
+
+            IJobDetail job = JobBuilder.Create<MyJob>().WithIdentity("job1", "group1").Build();
+            log.Info("Create JobDetail!");
+
+            DateTime dt = DateTime.Now.AddMinutes(1);
+            ITrigger trigger = TriggerBuilder.Create().WithIdentity("trigger1", "group1").StartAt(dt).Build();
+            log.Info("Create Trigger!");
+
+            await sched.ScheduleJob(job, trigger);
+            log.Info($"{job.Key} will run at: {dt:T}");
+
+            await sched.Start();
+            log.Info("Started Schedule!");
+
+            await sched.Shutdown();
+            log.Info("Schedule was shutdown!");
 
             Console.ReadKey();
-        }
-
-        static string Args(string[] str)
-        {
-            if (str.Length == 0)
-            {
-                return "0";
-            }
-
-            string res = null;
-            foreach (var item in str)
-            {
-                res += item;
-            }
-            return res;
         }
     }
 }

@@ -5,7 +5,6 @@ namespace TaskDemo01
 {
     public class Task01
     {
-
         public async static void Function1(string str)
         {
             long num = 0;
