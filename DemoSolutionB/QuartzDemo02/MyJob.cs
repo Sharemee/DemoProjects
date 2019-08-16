@@ -11,6 +11,7 @@ namespace QuartzDemo02
     {
         public Task Execute(IJobExecutionContext context)
         {
+            JobKey jobKey = context.JobDetail.Key;
             return 
         }
     }
