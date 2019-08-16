@@ -17,11 +17,11 @@ namespace QuartzDemo01
 
         static void Main()
         {
-            Demo1();
+            Demo();
             Console.ReadKey();
         }
 
-        static async void Demo1()
+        static async void Demo()
         {
             //默认使用App.config里的配置
             //XmlConfigurator.Configure();
@@ -49,6 +49,8 @@ namespace QuartzDemo01
 
             await sched.Start();
             log.Info("Started Schedule!");
+
+            await Task.Delay(1000 * 65);
 
             await sched.Shutdown();
             log.Info("Schedule was shutdown!");
