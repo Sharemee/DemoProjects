@@ -16,6 +16,10 @@ namespace ConsoleApp
             Console.WriteLine(dt.AddDays(-10));
             Console.WriteLine(dt.AddDays(-1).Date);
 
+            Console.WriteLine(dt.AddMinutes(1)-dt);
+            Console.WriteLine("------------------");
+            Console.WriteLine((dt.AddSeconds(1)-dt).Ticks);
+
             string _DIRPath = @"E:\Work\药品导入\DRUG\7.26";
             string relativePath = @"\Image\A.Jpg";
             while (relativePath.StartsWith(@"\") || relativePath.StartsWith(@"/"))
