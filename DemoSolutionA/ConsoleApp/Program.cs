@@ -12,6 +12,7 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             DateTime dt = DateTime.Now;
+            Console.WriteLine(dt.AddHours(5).ToString());
             Console.WriteLine(dt.AddDays(-10));
             Console.WriteLine(dt.AddDays(-1).Date);
 
