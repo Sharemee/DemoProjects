@@ -12,7 +12,6 @@ namespace EFConsoleDemo
     {
         static void Main(string[] args)
         {
-            //插入数据
             //T1();
 
             T2();
@@ -26,7 +25,7 @@ namespace EFConsoleDemo
             {
                 var result = ctx.Students.ToList();
 
-                UserInfo t = new UserInfo
+                UserInfo user = new UserInfo
                 {
                     ID = 1,
                     Name = "Sun",
@@ -34,7 +33,7 @@ namespace EFConsoleDemo
                 };
 
                 //ctx.UserInfo.Attach(t);//不会修改记录
-                ctx.Entry(t).State = EntityState.Modified;
+                ctx.Entry(user).State = EntityState.Modified;
 
                 ctx.SaveChanges();
             }
@@ -44,9 +43,20 @@ namespace EFConsoleDemo
         {
            using(var ctx=new Entities())
             {
-                var data = ctx.Set<UserInfo>().Single(x => x.Name == "Sun");
-                ctx.UserInfo.Attach(data);
-                data.Age = 18;
+                UserInfo user = new UserInfo
+                {
+                    ID = 2,
+                    Name = "Sun",
+                    Age = 19
+                };
+
+                //ctx.UserInfo.Attach(user);
+                ctx.Entry(user).State = EntityState.Added;
+
+                //UserInfo data = ctx.Set<UserInfo>().Single(x => x.Name == "Sun");
+                //ctx.UserInfo.Attach(data);
+                //data.Age = 18;
+
                 ctx.SaveChanges();
             }
         }
