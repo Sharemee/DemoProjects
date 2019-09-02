@@ -11,22 +11,16 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            DateTime dt = DateTime.Now;
-            Console.WriteLine(dt.AddHours(5).ToString());
-            Console.WriteLine(dt.AddDays(-10));
-            Console.WriteLine(dt.AddDays(-1).Date);
+            int timeOut = 10;
+            DateTime startDay = DateTime.Now.AddDays(-1 * timeOut).Date;
+            DateTime endDay = DateTime.Now.AddDays(-1).Date;//最后时间是昨天
 
-            Console.WriteLine(dt.AddMinutes(1)-dt);
-            Console.WriteLine("------------------");
-            Console.WriteLine((dt.AddSeconds(1)-dt).Ticks);
-
-            string _DIRPath = @"E:\Work\药品导入\DRUG\7.26";
-            string relativePath = @"\Image\A.Jpg";
-            while (relativePath.StartsWith(@"\") || relativePath.StartsWith(@"/"))
+            while (startDay < endDay)
             {
-                relativePath = relativePath.Substring(1, relativePath.Length - 1);
+                Console.WriteLine("计算: "+startDay);
+                startDay=startDay.AddDays(1);
             }
-            Console.WriteLine(Path.Combine(_DIRPath, relativePath));
+
             Console.ReadKey();
         }
     }
