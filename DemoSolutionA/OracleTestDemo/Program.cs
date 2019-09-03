@@ -45,8 +45,7 @@ namespace OracleTestDemo
                 //LogHelper.Info(log, "互联网医院列表为空, StatHosDay-统计结束");
                 return;
             }
-
-
+            
             foreach (var hos in hoslist)
             {
                 Console.WriteLine("目标医院ID: " + hos);
@@ -205,6 +204,21 @@ namespace OracleTestDemo
             }
 
             return result;
+        }
+
+
+        private static void Testc()
+        {
+            Entities ctx = new Entities();
+            var hos = 30666;
+            var tempData = ctx.SDTREATINFO
+                            .Where(x => x.NETHOSID == hos) //&& x.TREATSHEETTIME >= startDay && x.TREATSHEETTIME <= endTime
+                            .GroupBy(x => new { x.NETHOSID, x.REJECTTYPE })
+                            .Select(x => new {
+                                Hos = x.Key.NETHOSID,
+                                RejectType = x.Key.REJECTTYPE,
+                                Count = x.Count()
+                            });
         }
     }
 }
