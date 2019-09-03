@@ -1,0 +1,4 @@
+对execute immediate 的解释如下：
+
+简单来说, 就是你一个存储过程当中 创建了一个表 table_a 然后要用insert into将其他的数据插入到这个table_a当中，但是因为你在创建过程的时候 table_a还不存在，过程就会显示有编译错误，因为table_a不存在必然导致过程无法执行，所以无法编译成功.
+而把insert into语句加如到 execute immediate之后 则oracle不会再去理会这个对象是否存在，因此可以成功编译和执行。
