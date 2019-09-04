@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,15 +12,23 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            int timeOut = 10;
-            DateTime startDay = DateTime.Now.AddDays(-1 * timeOut).Date;
-            DateTime endDay = DateTime.Now.AddDays(-1).Date;//最后时间是昨天
-
-            while (startDay < endDay)
+            Dictionary<int, string> dic = new Dictionary<int, string>();
+            var config = ConfigurationManager.AppSettings["RejectType"].TrimEnd('|');
+            string[] s = config.Split('|');
+            foreach (var item in s)
             {
-                Console.WriteLine("计算: "+startDay);
-                startDay=startDay.AddDays(1);
+                int index = item.IndexOf(":");
+                int key = Convert.ToInt32(item.Substring(0, index));
+                string value = item.Substring(index+1);
+                dic.Add(key, value);
             }
+
+            foreach (var item in dic)
+            {
+                Console.WriteLine($"Key={item.Key}\tValue={item.Value}");
+            }
+
+            Console.WriteLine(dic[3]);
 
             Console.ReadKey();
         }
