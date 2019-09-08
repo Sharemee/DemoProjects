@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.779
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePrograms", "ConsolePrograms\ConsolePrograms.csproj", "{A30A9889-7FD2-4B6E-A07D-C4BF3A0A0AD6}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OracleTestDemo", "OracleTestDemo\OracleTestDemo.csproj", "{9CF6DEA8-6ECD-4DD5-A4E1-1221FD0A4111}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BK.JXWSWX.OracleEFModel", "..\..\..\江西省卫健委微信公众号项目\代码\JXWJW\BK.JXWSWX.OracleEFModel\BK.JXWSWX.OracleEFModel.csproj", "{71078753-9847-4375-9056-49F653985883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Type", "Type\Type.csproj", "{30A7EDA7-E8C9-4A64-84D8-6ED6D502C544}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{71078753-9847-4375-9056-49F653985883}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71078753-9847-4375-9056-49F653985883}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71078753-9847-4375-9056-49F653985883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30A7EDA7-E8C9-4A64-84D8-6ED6D502C544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30A7EDA7-E8C9-4A64-84D8-6ED6D502C544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30A7EDA7-E8C9-4A64-84D8-6ED6D502C544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30A7EDA7-E8C9-4A64-84D8-6ED6D502C544}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
