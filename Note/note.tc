@@ -1,0 +1,25 @@
+获取客户端上的数据:
+1.表单数据
+Request.Form["name"]
+Request.Form.Keys
+
+2.URL上的数据 
+Request.QueryString["name"]
+
+3.路由数据
+object obj=RouteData.Values["name"]
+
+4.方法上的参数
+public ActionResult Register (string name)
+------------------------------------------------------------------------------------------------------------------------------------------
+
+重定向:	Redirect("URL");
+转发:	RedirectToAction("Controller/Action");
+------------------------------------------------------------------------------------------------------------------------------------------
+cookie名字可以在web.config中设置:
+<authentication mode="Forms" >
+    <forms cookieless="UseCookies" name="LoginCookieName" loginUrl="~/Default.aspx"></forms>
+</authentication>
+------------------------------------------------------------------------------------------------------------------------------------------
+在项目中添加非侵入式Ajax脚本:
+Package Manager Console: Install-Package Microsoft.jQuery.Unobtrusive.Ajax
