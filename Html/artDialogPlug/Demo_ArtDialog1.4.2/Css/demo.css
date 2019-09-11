@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 12px "Microsoft YaHei"
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.link {
+    display: block;
+    margin: 10px;
+}
+
+.a {
+    color: #f00;
+}

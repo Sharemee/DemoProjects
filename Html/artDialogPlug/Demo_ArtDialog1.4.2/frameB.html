@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>frameB</title>
+    <link href="Css/demo.css" />
+    <script src="Script/jquery.js"></script>
+    <script src="Script/artDialog.js?skin=blue"></script>
+    <script src="Script/iframeTools.js"></script>
+</head>
+
+<body>
+    <p>这是B页面</p>
+    <a href="javascript:;" id="btn">2.给页面A回传值</a>
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+                art.dialog.data("val","成功，B页面传值过来了！");
+            })
+        })
+    </script>
+</body>
+
+</html>

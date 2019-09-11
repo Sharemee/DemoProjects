@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>frameA</title>
+    <link href="Css/demo.css" />
+    <script src="Script/jquery.js"></script>
+    <script src="Script/artDialog.js?skin=blue"></script>
+    <script src="Script/iframeTools.js"></script>
+</head>
+
+<body>
+    <p>这是A页面</p>
+    <div id="A" style="color:red;">b页面传过来的值，这里显示！</div>
+    <a href="javascript:;" id="btn">1、点击，打开b页面</a>
+    <script>
+         $("#btn").click(function () {
+                artDialog.open("frameB.html", {
+                    id: "B",
+                    title: "页面B",
+                    ok: function () { },
+                    close: function () {
+                        alert("关闭页面B");
+                    }
+                })
+            });
+        $(function () {
+           
+        });
+
+    </script>
+</body>
+
+</html>
