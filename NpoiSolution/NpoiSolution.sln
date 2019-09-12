@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateEmptyDocument", "CreateEmptyDocument\CreateEmptyDocument.csproj", "{4626A052-8E0D-480A-BF3B-86B67F5B99ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadExcel", "ReadExcel\ReadExcel.csproj", "{05E3537D-F3C2-451F-8B34-374315B0E4AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4626A052-8E0D-480A-BF3B-86B67F5B99ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4626A052-8E0D-480A-BF3B-86B67F5B99ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4626A052-8E0D-480A-BF3B-86B67F5B99ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05E3537D-F3C2-451F-8B34-374315B0E4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E3537D-F3C2-451F-8B34-374315B0E4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E3537D-F3C2-451F-8B34-374315B0E4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E3537D-F3C2-451F-8B34-374315B0E4AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
