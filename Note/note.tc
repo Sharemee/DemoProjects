@@ -23,3 +23,6 @@ cookie名字可以在web.config中设置:
 ------------------------------------------------------------------------------------------------------------------------------------------
 在项目中添加非侵入式Ajax脚本:
 Package Manager Console: Install-Package Microsoft.jQuery.Unobtrusive.Ajax
+
+ctfmon
+可以运行输入法，或者叫启动
