@@ -1,0 +1,10 @@
+ToString:2016/9/27 0:00:00
+
+ToString("yyyy/MM/dd"):2016/09/27
+ToString("yyyy-MM-dd"):2016-09-27
+ToString("yyyy.MM.dd"):2016.09.27
+ToString("dd/MM/yyyy"):27/09/2016
+ToString("dd-MM-yyyy"):27-09-2016
+ToString("yyyy年MM月dd日"):2016年09月27日
+ToString("yyyy-MM-dd HH:mm:ss.fff"));  2016-09-27 01:02:03.001   // fff 越多精度越高
+ToString("yyyy-MM-dd HH:mm:ss:ms")); 2016-09-27 01:02:03:234
