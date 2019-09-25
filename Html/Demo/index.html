@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload=function (){
+            var array=["冠心病","动脉粥样硬化","高血压","心衰"];
+            var objArray=[];
+            array.forEach(element => {
+                var temp={label:element,selected:false};
+                objArray.push(temp);
+                //console.log(temp);
+            });
+            console.log(objArray);
+            console.log("结束");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# 查看pip帮助命令
+pip <-h|--help>
+
+# 查看pip的版本
+pip <-V|--version>
+
+# 更新pip命令
+python -m pip install --upgrade pip
+
