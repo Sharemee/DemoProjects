@@ -7,3 +7,12 @@ pip <-V|--version>
 # 更新pip命令
 python -m pip install --upgrade pip
 
+# Python编码注释
+# -*- coding: utf-8 -*-
+
+# pip安装虚拟隔离的开发环境
+pip install virtualenv
+
+# pip卸载包(例子:卸载pi)
+pip uninstall pi
+
