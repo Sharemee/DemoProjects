@@ -16,3 +16,6 @@ pip install virtualenv
 # pip卸载包(例子:卸载pi)
 pip uninstall pi
 
+# 查看已经安装的包
+pip list
+

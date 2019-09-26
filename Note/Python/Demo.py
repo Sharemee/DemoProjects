@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
+import requests
 
-print("hell world 中国")
-str=int(input("some num:"))
-print(str)
+response=requests.get("https://weibo.com")
+
+print(response.status_code)
+print(response.cookies)
+print(response.text)
