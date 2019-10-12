@@ -1,0 +1,27 @@
+> help
+## help list
+
+> show dbs
+## show databases name
+
+> db
+## 显示当前数据库名称
+
+> use <DatabaseName>
+## 如果当前数据库存在就会切换到数据库, 没有就会创建. 此时在MongoDB中没有真正的创建数据库, 直到数据库有数据的时候才会创建数据库.
+
+> db.dropDatabase()
+## 删除当前数据库
+
+> show collections
+## 查看当前数据库下的所有集合
+
+> db.createCollection('集合名称')
+## 切换到想要创建集合的数据库后, 使用此命令将使用指定名称创建集合
+
+> db.<CollectionName>.renameCollection('新集合名称')
+## 重命名集合(首先切换到指定数据库下,再查看集合,看看是否有需要重命名的集合)
+
+> db.<CollectionName>.drop()
+## 删除集合
+
