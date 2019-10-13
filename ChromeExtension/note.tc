@@ -1,0 +1,2 @@
+Chrome插件没有严格的项目结构要求，只要保证本目录有一个manifest.json即可，也不需要专门的IDE，普通的web开发工具即可。
+这是一个Chrome插件最重要也是必不可少的文件，用来配置所有和插件相关的配置，必须放在根目录。其中，manifest_version、name、version3个是必不可少的，description和icons是推荐的。
