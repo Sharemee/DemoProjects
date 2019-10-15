@@ -26,3 +26,35 @@ Package Manager Console: Install-Package Microsoft.jQuery.Unobtrusive.Ajax
 
 ctfmon.exe
 可以启动系统输入法,或者叫唤醒系统输入法.
+
+ static string CreateSql<T>(T t)
+        {
+            Type type = typeof(T);
+            string table = type.Name;
+            string sql = $"insert into {table} values(";
+            List<string> parms = new List<string>();
+            var pros = type.GetProperties();
+            foreach (var item in pros)
+            {
+                parms.Add("@" + item.Name);
+            }
+            foreach (var item in parms)
+            {
+                sql += (item + ",");
+            }
+
+            Console.WriteLine(sql);
+
+
+            //传参的方式
+            SqlParameter[] parameters = new SqlParameter[pros.Length];
+            int s = 0;
+            foreach (var i in parms)
+            {
+                parameters[s]=new SqlParameter { }
+            }
+            
+
+
+            return null;
+        }
