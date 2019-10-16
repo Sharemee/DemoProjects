@@ -45,7 +45,6 @@ ctfmon.exe
 
             Console.WriteLine(sql);
 
-
             //传参的方式
             SqlParameter[] parameters = new SqlParameter[pros.Length];
             int s = 0;
@@ -53,8 +52,6 @@ ctfmon.exe
             {
                 parameters[s]=new SqlParameter { }
             }
-            
-
-
+        
             return null;
         } 
