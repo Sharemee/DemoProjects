@@ -1,10 +1,37 @@
 ﻿@model WebApplicationTest.Models.Student
 @{
+    //Layout=""
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
+<h2>DropDownListFor()</h2>
 <div>
-    @Html.DropDownListFor(m=>m.Name,)
+    @Html.DropDownListFor(m => m.Name, ViewBag.Student as List<SelectListItem>)
+</div>
+
+<h2>DropDownListFor()</h2>
+<div>
+    @Html.DropDownList("cardtype", ViewBag.Student as List<SelectListItem>)
+</div>
+
+<h2>selectajax:多级联动下拉框</h2>
+<div>
+    <p>选择颜色:</p>
+    <select id="color" name="color"></select>
+    <script src="~/Script/selectajax.js"></script>
+    <script>
+        $(function () {
+            var ajaxColorDataJson = [
+                {
+                    Obj: "#color",
+                    combobox: false,
+                    PKName: "ParentID",
+                    DefaultOpt: { key: "------请选择------", val: "" },
+                    //SelectVal: null,
+                    url: "@Url.Action("GetColorJson", "Home", new { @area = "" }) "
+                }
+            ];
+            $.AjaxSelect({ columns: ajaxColorDataJson, defaultval: 0 });
+        })
+
+    </script>
 </div>

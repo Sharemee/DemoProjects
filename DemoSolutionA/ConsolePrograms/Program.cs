@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -12,7 +13,7 @@ namespace ConsolePrograms
         static void Main(string[] args)
         {
             Console.WriteLine("当前系统时间: " + DateTime.Now.ToString() + "\n");
-            Demo4();
+            Demo5();
 
             Console.ReadKey();
         }
@@ -57,6 +58,13 @@ namespace ConsolePrograms
         {
             string str = DateTime.Now.ToString("yyy_MM_dd");
             Console.WriteLine(str);
+        }
+
+        static void Demo5()
+        {
+            var a = Math.DivRem(10, 3, out var b);
+            Console.WriteLine(a);
+            Console.WriteLine(b);
         }
     }
 }
