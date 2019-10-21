@@ -82,6 +82,14 @@ namespace ConsolePrograms
             Console.WriteLine(hos.CustomGetType());
             Console.WriteLine(hos.GetType().Name);
             Console.WriteLine("==============");
+            List<Student> list = new List<Student>
+            {
+                new Student{Id=1,Name="Sun_001",Age=15},
+                new Student{Id=2,Name="Sun_002",Age=17},
+                new Student{Id=3,Name="Sun_003",Age=19}
+            };
+            var a = list.ToArray();
+            Console.WriteLine(a);
 
         }
 
