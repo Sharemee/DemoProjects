@@ -8,12 +8,16 @@ using System.Threading.Tasks;
 
 namespace ConsolePrograms
 {
+    public enum HosSuportCardType
+    {
+        港澳通行证=2
+    }
     class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("当前系统时间: " + DateTime.Now.ToString() + "\n");
-            Demo5();
+            Demo6();
 
             Console.ReadKey();
         }
@@ -65,6 +69,33 @@ namespace ConsolePrograms
             var a = Math.DivRem(10, 3, out var b);
             Console.WriteLine(a);
             Console.WriteLine(b);
+        }
+
+        static void Demo6()
+        {
+            Console.WriteLine((int)HosSuportCardType.港澳通行证);
+            Console.WriteLine("=============================");
+            var str = Enum.GetName(typeof(HosSuportCardType), 2);
+            Console.WriteLine(str);
+            Console.WriteLine("==================");
+            HosSuportCardType hos = new HosSuportCardType();
+            Console.WriteLine(hos.CustomGetType());
+            Console.WriteLine(hos.GetType().Name);
+            Console.WriteLine("==============");
+
+        }
+
+        static void Demo07()
+        {
+
+        }
+    }
+
+    public static class Extend
+    {
+        public static string CustomGetType(this HosSuportCardType en)
+        {
+            return en.GetType().Name;
         }
     }
 }
