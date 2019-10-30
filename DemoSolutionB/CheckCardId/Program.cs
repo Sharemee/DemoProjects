@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace CheckCardId
 {
@@ -11,29 +12,20 @@ namespace CheckCardId
     {
         static void Main(string[] args)
         {
-            string cardId = "360121198607318353";
-            Console.WriteLine(CheckCardIds(cardId));
-
-            Console.ReadKey();
-        }
-
-        static bool CheckCardIds(string id)
-        {
-            if (id.Length == 18)
+            string st = "<Req><Head><T>2123</T><K>0001</K><H>30666</H><C>1006</C><P>WST</P></Head><Service><CardNo>300003431276</CardNo><CardType>0</CardType><code>12601874660</code><IDType>1</IDType><denNo>3360731199703203433</denNo><name>Sunshine_SSSS</name><sex>男</sex><birthday>1997-03-20</birthday><phone>18296110110</phone><guardian></guardian><isguardian>0</isguardian></Service></Req>";
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(st);
+            var res = xml.SelectSingleNode("Req/Service/IDTypes");
+            if (res is null)
             {
-                return A(id);
+                Console.WriteLine("null");
             }
             else
             {
-                if (id.Length == 15)
-                {
-                    return B(id);
-                }
-                else
-                {
-                    return false;
-                }
+                Console.WriteLine(res.InnerText);
             }
+
+            Console.ReadKey();
         }
 
         static bool A(string str)

@@ -1,0 +1,4 @@
+alter table 表名 drop constraint 主键名;
+
+Alter Table HosSuportCard Dorp Constraint PK_HOSSUPORTCARD;
+Alter Table HosSuportCard Add Constraint PK_HOSSUPORTCARD primary key (HOSPITALID,CARDTYPE);

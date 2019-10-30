@@ -17,7 +17,7 @@ namespace ConsolePrograms
         static void Main(string[] args)
         {
             Console.WriteLine("当前系统时间: " + DateTime.Now.ToString() + "\n");
-            Demo6();
+            Demo7();
 
             Console.ReadKey();
         }
@@ -93,9 +93,11 @@ namespace ConsolePrograms
 
         }
 
-        static void Demo07()
+        static void Demo7()
         {
-
+            var stu = new Student();
+            stu.Id = 11;stu.Name = "Sunshine";stu.Age = 999;
+            Console.WriteLine(new object[1] { stu }.ToString());
         }
     }
 
