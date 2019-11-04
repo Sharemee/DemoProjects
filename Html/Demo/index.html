@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="dataTime/css/jquery.datetimepicker.css" rel="stylesheet" />
+    <script src="jquery.js"></script>
+    <script src="dataTime/dataTime.js"></script>
+    <script src="dataTime/jquery.datetimepicker.js"></script>
 </head>
 <body>
+    <div>
+        <input type="radio" name="gender" value="1" checked="true" /><label value="1">男</label>
+        <input type="radio" name="gender" value="2" /><label value="2">女</label>
+        <input type="text" name="date_birthdate" id="date_birthdate" />
+        <div id="datetime"></div>
+    </div>
     <script>
-        window.onload=function (){
-            var array=["冠心病","动脉粥样硬化","高血压","心衰"];
-            var objArray=[];
-            array.forEach(element => {
-                var temp={label:element,selected:false};
-                objArray.push(temp);
-                //console.log(temp);
-            });
-            console.log(objArray);
-            console.log("结束");
+        $(function(){
+            $("input[type='radio']").click(function(){
+                getgender();
+            })
+        })
+        function getgender(){
+            var Abc1 = $("input[name='gender']:checked").next("label").html();
+            //var Abc2 =  $("input[name='gender']:checked").val();
+            //console.log(Abc2,Abc1);
+
+            var a=$("input[name='gender']:checked").next("label").attr("value");
+            //console.log(a,Abc1);
         }
+    </script>
+    <script>
+        $(function(){
+            $("#date_birthdate").datetimepicker();
+        })
     </script>
 </body>
 </html>
