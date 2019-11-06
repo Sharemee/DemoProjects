@@ -17,11 +17,20 @@
         <input type="text" name="date_birthdate" id="date_birthdate" />
         <div id="datetime"></div>
     </div>
+    <div>
+        <select id="cardType" name="cardType">
+            <option value="1">二代身份证</option>
+            <option value="2">港澳居民来往内地通行证</option>
+            <option value="4">台湾居民来往大陆通行证</option>
+            <option value="6">中国护照</option>
+        </select>
+    </div>
     <script>
         $(function(){
             $("input[type='radio']").click(function(){
                 getgender();
-            })
+            });
+            
         })
         function getgender(){
             var Abc1 = $("input[name='gender']:checked").next("label").html();
