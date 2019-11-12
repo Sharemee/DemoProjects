@@ -12,9 +12,10 @@ namespace CheckCardId
     {
         static void Main(string[] args)
         {
-            string st = "<Req><Head><T>2123</T><K>0001</K><H>30666</H><C>1006</C><P>WST</P></Head><Service><CardNo>300003431276</CardNo><CardType>0</CardType><code>12601874660</code><IDType>1</IDType><denNo>3360731199703203433</denNo><name>Sunshine_SSSS</name><sex>男</sex><birthday>1997-03-20</birthday><phone>18296110110</phone><guardian></guardian><isguardian>0</isguardian></Service></Req>";
+            string strHasIDType = "<Req><Head><T>2123</T><K>0001</K><H>30666</H><C>1006</C><P>WST</P></Head><Service><CardNo>300003431276</CardNo><CardType>0</CardType><code>12601874660</code><IDType>1</IDType><denNo>3360731199703203433</denNo><name>Sunshine_SSSS</name><sex>男</sex><birthday>1997-03-20</birthday><phone>18296110110</phone><guardian></guardian><isguardian>0</isguardian></Service></Req>";
+            string strNotIDType = "<Req><Head><T>2123</T><K>0001</K><H>30666</H><C>1006</C><P>WST</P></Head><Service><CardNo>300003431276</CardNo><CardType>0</CardType><code>12601874660</code><denNo>3360731199703203433</denNo><name>Sunshine_SSSS</name><sex>男</sex><birthday>1997-03-20</birthday><phone>18296110110</phone><guardian></guardian><isguardian>0</isguardian></Service></Req>";
             XmlDocument xml = new XmlDocument();
-            xml.LoadXml(st);
+            xml.LoadXml(strHasIDType);
             var res = xml.SelectSingleNode("Req/Service/IDTypes");
             if (res is null)
             {
