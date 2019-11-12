@@ -1,0 +1,2 @@
+## 解决新版本Chrome浏览器跨域访问问题:
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir=E:\Chrome
