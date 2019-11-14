@@ -3,3 +3,7 @@
 
 
 <Request4GetDoctorInfo><deptId></deptId><doctorId></doctorId><beginDate></beginDate><endDate></endDate></Request4GetDoctorInfo>
+
+<Req><Head><T>2123</T><K>1</K><H>30691</H><C>9000</C><P>WST</P></Head><Service><CardNo>10151791</CardNo><CardType>0</CardType></Service></Req>
+<Req><Head><T>2123</T><K>0001</K><H>30691</H><C>9003</C><P>WST</P></Head><Service><CardNo>10151791</CardNo><CardType>0</CardType>
+<Name>张三</Name></Service></Req>
