@@ -1,0 +1,14 @@
+## Round(): 会将计算结果进行四舍五入.
+
+## 举个粟子: Round(parameter):
+SQL> Select Round(12.34) From Dual;
+12
+SQL> Select Round(34.56) From Dual;
+35
+## 注意: Round(parameter)等同于Round(parameter1,0)
+
+## 再举个粟子: Round(parameter1,parameter2)
+SQL> Select Round(12.34,1) From Dual;
+12.3
+SQL> Select Round(34.56,1) From Dual;
+35.6
