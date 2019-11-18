@@ -1,9 +1,12 @@
 李雅文 360122200012123326 18702613880
 詹丽莉 360122199309136624 13320019855
-
+ncdxyfy mzsf2798
 
 <Request4GetDoctorInfo><deptId></deptId><doctorId></doctorId><beginDate></beginDate><endDate></endDate></Request4GetDoctorInfo>
 
 <Req><Head><T>2123</T><K>1</K><H>30691</H><C>9000</C><P>WST</P></Head><Service><CardNo>10151791</CardNo><CardType>0</CardType></Service></Req>
 <Req><Head><T>2123</T><K>0001</K><H>30691</H><C>9003</C><P>WST</P></Head><Service><CardNo>10151791</CardNo><CardType>0</CardType>
 <Name>张三</Name></Service></Req>
+
+<Req><Head><T>2123</T><K></K><H>90666</H><C>30000</C><P>WST</P></Head><Service>
+<CardNo>300003431276</CardNo><CardType>0</CardType><BeginDT>2018-04-07</BeginDT><EndDT>2018-05-07</EndDT></Service></Req>
