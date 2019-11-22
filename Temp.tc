@@ -10,3 +10,17 @@ ncdxyfy mzsf2798
 
 <Req><Head><T>2123</T><K></K><H>90666</H><C>30000</C><P>WST</P></Head><Service>
 <CardNo>300003431276</CardNo><CardType>0</CardType><BeginDT>2018-04-07</BeginDT><EndDT>2018-05-07</EndDT></Service></Req>
+
+select h.id,h.hospid,h.cardtype,h.cardno,h.patientname,h.reccreatedt
+from HOSPCARD h
+where h.wxuserid='{0}'
+and h.recstatus=1
+and (
+    (h.hospid = {1}
+    and h.cardtype in ({2})
+)
+or (
+    h.hospid is null
+    and h.cardtype in ({3})
+    )
+)
