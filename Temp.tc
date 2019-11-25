@@ -24,3 +24,42 @@ or (
     and h.cardtype in ({3})
     )
 )
+
+
+[Route("api/interface/callback"), HttpGet]
+        public HttpResponseMessage JXInfoLoginCallback()
+        {
+            string redirect_uri = "";
+            string ticket = "";
+
+            _log.Info($"{this.ActionContext.ActionDescriptor.ActionName} Begin：{this.Request.RequestUri.ToString()}");
+
+            var redirect_uriKeyValueList = this.Request.GetQueryNameValuePairs().Where(item => item.Key == "redirect_uri");
+            if(redirect_uriKeyValueList.Count()>0)
+            {
+                redirect_uri = redirect_uriKeyValueList.First().Value;
+            }
+
+            var ticketKeyValueList = this.Request.GetQueryNameValuePairs().Where(item => item.Key == "ticket");
+            if(ticketKeyValueList.Count()>0)
+            {
+                ticket = ticketKeyValueList.First().Value;
+            }
+
+            string newUrl = "";
+            if(redirect_uri.Contains('?'))
+            {
+                newUrl = $"{redirect_uri}&ticket={ticket}";
+            }
+            else
+            {
+                newUrl = $"{redirect_uri}?ticket={ticket}";
+            }
+
+            _log.Info($"{this.ActionContext.ActionDescriptor.ActionName} End：{newUrl}");
+
+            var response = this.Request.CreateResponse(HttpStatusCode.Redirect);
+            response.Headers.Location = new Uri(newUrl);
+
+            return response;
+        }
