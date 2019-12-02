@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <input type="button" value="测试按钮2" name="btn2" id="btn2" />
+    <div class="box" data="qwe">
+        <input type="button" value="测试按钮1" name="btn1" id="btn1" />
+        <input type="text" value="输入框1" name="text1" id="text1" />
+    </div>
+    <div class="boxnav">
+        <input type="button" value="测试按钮3" name="btn3" id="btn3" />
+        <input type="text" value="输入框2" name="text2" id="text2" />
+    </div>
+    <script>
+        $(function () {
+            var sa = $(".box");
+            console.log(".box", sa);
+
+            var doc = $(".boxnav");
+            console.log("doc", doc);
+
+            $('input', $(".box")).click(function () {
+                console.log("aaa");
+            })
+        })
+    </script>
+</body>
+
+</html>
