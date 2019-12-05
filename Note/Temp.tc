@@ -1,5 +1,4 @@
-## 接口: 1022
-## 作用: 获取订单信息
-
-## 调用前置机参数:
-<Request4GetAppointInfo><hisOrderId></hisOrderId><regDate></regDate></Request4GetAppointInfo>
+BzContext	%7b%22Source%22%3a0%2c%22WebBaseAddress%22%3a%22http%3a%2f%2fyyzltest.jxhfpc.gov.cn%2fWeiXin12320%2f%22%7d
+BIGipServerPool_yyzl	3305574410.20480.0000
+BIGipServerPool_ras	117506476.20480.0000
+12320AzuCookie	bkmId%3d%26wjwwxuId%3d227152%26aluId%3d%26appId%3d%26wjwuserId%3d13869%26timestamp%3d1575449218%26sign%3d1A10FCE25C53EBD272B1A0A843A10DAB
