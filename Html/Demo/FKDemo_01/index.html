@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            //原始数据
+            let data = { "Data": [] }
+            let obj1 = {
+                "HospitalId": 59889704761.0,
+                "EntityHosName": "倍康互联网医院",
+                "DoctorId": "181f1f8a4fec44c6a36a7b790f026e09",
+                "DoctorName": "敖璐",
+                "Mobile": "13277105581",
+                "IdNo": "420683199012120994",
+                "DoctorTitle": "高级医师",
+                "DepartName": "心血管(心律失常)",
+                "MsdName": "内分泌",
+                "DeptId": "FB6DAEA4396F4316A55BA922A1D016DF",
+                "GoodAt": "糖尿病足,甲状腺功能减退,甲状腺炎,糖尿病",
+                "PicPath": "https://bitof.519e.com.cn/JGReact//api/ApiFile/FileDownLoad?fileID=5dea0260bb9683111c314158",
+                "IsCanPrescribe": 0,
+                "TotalRow": 4
+            };
+            data.Data.push(obj1);
+            let obj2 = {
+                "HospitalId": 59889704761.0,
+                "EntityHosName": "倍康互联网医院",
+                "DoctorId": "3665c79e8fb3474ba77b47b8b2e50131",
+                "DoctorName": "郭能飞",
+                "Mobile": "18679146632",
+                "IdNo": "36073019881103201X",
+                "DoctorTitle": "高级医师",
+                "DepartName": "心血管(心律失常)",
+                "MsdName": "变态反应",
+                "DeptId": "FB6DAEA4396F4316A55BA922A1D016DF",
+                "GoodAt": "过敏性鼻炎,过敏,多形红斑,花粉症",
+                "PicPath": "https://bitof.519e.com.cn/JGReact//api/ApiFile/FileDownLoad?fileID=5de0ca83652afc31a4506685",
+                "IsCanPrescribe": 0,
+                "TotalRow": 4
+            };
+            data.Data.push(obj2);
+            let obj3 = {
+                "HospitalId": 59889704761.0,
+                "EntityHosName": "倍康互联网医院",
+                "DoctorId": "cb91359f596343a7ab5c2a1a644b3904",
+                "DoctorName": "王宇祥",
+                "Mobile": "19917901896",
+                "IdNo": "362425198906270031",
+                "DoctorTitle": "高级医师",
+                "DepartName": "心血管(心律失常)",
+                "MsdName": "内分泌",
+                "DeptId": "FB6DAEA4396F4316A55BA922A1D016DF",
+                "GoodAt": "内分泌失调,遗传代谢病,糖尿病视网膜病变,甲状旁腺功能减退症,脑垂体瘤,痛风,甲状腺疾病,颅脑先天畸形",
+                "PicPath": "https://bitof.519e.com.cn/JGReact//api/ApiFile/FileDownLoad?fileID=5dee0e81652af90fa06d1244",
+                "IsCanPrescribe": 0,
+                "TotalRow": 4
+            };
+            data.Data.push(obj3);
+            let obj4 = {
+                "HospitalId": 59889704761.0,
+                "EntityHosName": "倍康互联网医院",
+                "DoctorId": "cb91359f596343a7ab5c2a1a644b3904",
+                "DoctorName": "王宇祥",
+                "Mobile": "19917901896",
+                "IdNo": "362425198906270031",
+                "DoctorTitle": "高级医师",
+                "DepartName": "心血管(心律失常)",
+                "MsdName": "神经外科",
+                "DeptId": "FB6DAEA4396F4316A55BA922A1D016DF",
+                "GoodAt": "内分泌失调,遗传代谢病,糖尿病视网膜病变,甲状旁腺功能减退症,脑垂体瘤,痛风,甲状腺疾病,颅脑先天畸形",
+                "PicPath": "https://bitof.519e.com.cn/JGReact//api/ApiFile/FileDownLoad?fileID=5dee0e81652af90fa06d1244",
+                "IsCanPrescribe": 0,
+                "TotalRow": 4
+            };
+            data.Data.push(obj4);
+            console.log("data",data);
+
+            //一阶段: 提取原始数据为数组
+            let msgGroup = {};
+            data.Data.forEach(v => {
+                msgGroup[v.DoctorId] = msgGroup[v.DoctorId] || [];
+                msgGroup[v.DoctorId].push(v);
+            });
+            console.log(Object.values(msgGroup));
+            console.log("msgGroup",msgGroup);
+
+            //二阶段: 构造中间结构数组[ [1], [2], [[3],[4]] ]
+            var m = [];
+            for(let v in msgGroup){
+                let vv = msgGroup[v];
+                if(vv.length==1){
+                    m.push(vv);
+                } else {
+                    let tempArry=[]
+                    for(let i=0;i<vv.length;i++){
+                        tempArry.push(vv[i]);
+                    }
+                    m.push(tempArry);
+                }
+            }
+            console.log("m",m);
+
+            //三阶段: 构造结果, 遍历中间数组m
+            var result=[];
+            for(let i=0;i<m.length;i++){
+                if(m[i].length==1){
+                    result.push(m[i][0]);
+                } else {
+                    let tem=[]; tem=m[i][0];
+                    let msdnamearr=[];
+                    for(let j=0;j<m[i].length;j++){
+                        msdnamearr.push(m[i][j].MsdName);
+                    }
+                    tem.MsdName=msdnamearr.toString();
+                    result.push(tem);
+                }
+            }
+            console.log(result);
+        }
+    </script>
+
+</body>
+
+</html>
