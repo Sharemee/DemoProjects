@@ -1,7 +1,6 @@
 public class SharpZip
     {
-        public SharpZip()
-        { }
+        public SharpZip() { }
         /// <summary>
         /// 压缩
         /// </summary> 
