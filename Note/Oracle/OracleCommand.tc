@@ -3,12 +3,15 @@ system  manager
 sys     change_on_install
 注意: 使用 sys 登录时需要加上"as sysdba"
 
-## Oracle 登录
+## Oracle 登录方式一
 > sqlplus /nolog
 > conn sys as sysdba
 > change_on_install
 
 ## 显示当前登录账户
-> show user
+> show user;
+
+## 显示PDB
+> show pdbs;
 
 ## 
